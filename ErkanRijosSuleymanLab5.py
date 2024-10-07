@@ -30,6 +30,7 @@ Created on Sun Oct  6 19:02:14 2024
 ##############################################################################
 
 import statistics
+import math # import math module
 
 ##################################### A #######################################
 
@@ -95,6 +96,8 @@ def main():
     
 main()
 
+print() #spacer line
+
 ##################################### A #######################################
 
 
@@ -103,10 +106,31 @@ main()
 
 ################################ VARIABLES ####################################
 
-radius = int(input("Please enter a numerical value for the radius."))
-height = int(input("Please enter a numerical value for the height."))
+
 
 ################################ VARIABLES ####################################
+def coneCalculations(radius, height):
+    
+    theVolume = (1/3) * math.pi * ((radius**2) * height) # calculates cone volume
+    
+    theSurfaceArea = math.pi * radius * (radius + math.sqrt(radius**2 + height**2))
+    
+    print(f"{'Attributes of the Cone':<23} {'Value':>8}")
+    print(f"{'Volume = ':>22} {theVolume:>10.2f}")
+    print(f"{'Surface Area = ':>22} {theSurfaceArea:>8.2f}")
 
 def main2():
-##################################### B #######################################  
+    
+    radius = float(input("Please enter a numerical value for the radius. "))
+    height = float(input("\nPlease enter a numerical value for the height. "))
+    
+    print() #spacer line
+    
+    coneCalculations(radius, height)
+    
+    
+    
+##################################### B #######################################
+
+main2()
+  
