@@ -28,21 +28,19 @@ Created on Sun Oct  6 19:02:14 2024
 # Outputs: A: 
 #          B: 
 ##############################################################################
+
 import statistics
+
+##################################### A #######################################
+
 ################################ VARIABLES ####################################
 
-#num1 = int(input("please enter a number from 1 - 100"))
-#num2 = int(input("please enter a number from 1 - 100"))
-#num3 = int(input("please enter a number from 1 - 100"))
-
 numbers = [] # array to hold 3 integers being input by user
-
-   
 
 ################################ VARIABLES ####################################
 def user_input_sequence():
     
-    for i in range(3): #iterate loop 3 times for 3 inputs
+    while len(numbers) < 3: #iterate loop 3 times for 3 inputs
         #try / except to act as a input checker for non numericals        
             try:
                 num = int(input("1st Please enter a number ranging from 1 - 100. "))
@@ -56,7 +54,8 @@ def user_input_sequence():
             
             except ValueError:
                 print("Please enter only a NUMBER ranging from 1 - 100")
-                
+                print() #spacer line
+                                
     print("You have entered", numbers) 
 
 def calc_sum():
@@ -67,15 +66,47 @@ def max_val():
     theMax = max(numbers)
     print("Max: ", theMax)
     
-#def min_val():
+def min_val():
+    theMin = min(numbers)
+    print("Min: ", theMin)
     
-#def average():
+def average():
+    theAverage = statistics.mean(numbers)
+    print("Average: ", theAverage)
     
-#def product():
+def product():
+    theProduct = 1
+    
+    for num in numbers:
+        theProduct *= num
+        
+    print("Product: ", theProduct)
+    
 
-#def main():
+def main():
+    user_input_sequence()
+    calc_sum()
+    max_val()
+    min_val()
+    average()
+    product()
     
-user_input_sequence()
+    
+    
+main()
+
+##################################### A #######################################
 
 
-    
+
+##################################### B #######################################
+
+################################ VARIABLES ####################################
+
+radius = int(input("Please enter a numerical value for the radius."))
+height = int(input("Please enter a numerical value for the height."))
+
+################################ VARIABLES ####################################
+
+def main2():
+##################################### B #######################################  
