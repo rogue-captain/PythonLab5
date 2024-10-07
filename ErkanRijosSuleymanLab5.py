@@ -109,15 +109,15 @@ print() #spacer line
 
 
 ################################ VARIABLES ####################################
+#define function with 2 parameters passed
 def coneCalculations(radius, height):
     
     theVolume = (1/3) * math.pi * ((radius**2) * height) # calculates cone volume
     
     theSurfaceArea = math.pi * radius * (radius + math.sqrt(radius**2 + height**2))
     
-    print(f"{'Attributes of the Cone':<23} {'Value':>8}")
-    print(f"{'Volume = ':>22} {theVolume:>10.2f}")
-    print(f"{'Surface Area = ':>22} {theSurfaceArea:>8.2f}")
+    return theVolume, theSurfaceArea #returns the value of variables to the function.
+
 
 def main2():
     
@@ -126,7 +126,12 @@ def main2():
     
     print() #spacer line
     
-    coneCalculations(radius, height)
+    #unpack values from function
+    theVolume, theSurfaceArea = coneCalculations(radius, height)
+    
+    print(f"{'Attributes of the Cone':<23} {'Value':>8}")
+    print(f"{'Volume = ':>22} {theVolume:>10.2f}")
+    print(f"{'Surface Area = ':>22} {theSurfaceArea:>8.2f}")
     
     
     
