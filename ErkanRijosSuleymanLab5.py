@@ -35,33 +35,47 @@ import statistics
 #num2 = int(input("please enter a number from 1 - 100"))
 #num3 = int(input("please enter a number from 1 - 100"))
 
-numbers = [0,2]
+numbers = [] # array to hold 3 integers being input by user
 
-for i in range(3):
-    num = int(input("please enter a numbers ranging from 1 - 100."))
-    
-    while num < 1 or num > 100:
-        print("please enter an integer from 1 - 100.")
-        num = int(input("please enter a numbers ranging from 1 - 100."))
-        
-    numbers.append(num)
-    print("You have entered", numbers)
+   
 
 ################################ VARIABLES ####################################
+def user_input_sequence():
+    
+    for i in range(3): #iterate loop 3 times for 3 inputs
+        #try / except to act as a input checker for non numericals        
+            try:
+                num = int(input("1st Please enter a number ranging from 1 - 100. "))
+                
+                if num >= 1 or num >= 100:
+                   numbers.append(num) # check for valid number range
+                   #break # exit if input is valid
+                   
+                else:
+                    print("2nd please enter a number ranging from 1 - 100.")
+            
+            except ValueError:
+                print("Please enter only a NUMBER ranging from 1 - 100")
+                
+    print("You have entered", numbers) 
 
-
-def sum():
-    numSum = num1 + num2 + num3
-    print("Sum: ", numSum)
+def calc_sum():
+    theSum = sum(numbers)
+    print("Sum: ",theSum)
     
 def max_val():
-    numbers = 
+    theMax = max(numbers)
+    print("Max: ", theMax)
     
-def min_val():
+#def min_val():
     
-def average():
+#def average():
     
-def product():
+#def product():
 
-def main():
+#def main():
+    
+user_input_sequence()
+
+
     
